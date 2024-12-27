@@ -1,21 +1,18 @@
-import {useContext} from "react";
-import {BlogContext} from "../store/BlogContext";
+import { useContext } from "react";
+import { BlogContext } from "../store/BlogContext";
 import Blog from "./Blog";
 
-
 const BlogList = () => {
+    const { blogs } = useContext(BlogContext);
 
-const {blogs} = useContext(BlogContext);
-
-
-
-    return(
+    return (
         <div>
-            {blogs.map((blog) => {
+            {blogs.map((blog) => (
                 <Blog key={blog._id} blog={blog} />
-            })}
+            ))}
         </div>
-    )
-}
+    );
+};
 
-export default BlogList;
+export default BlogList
+
